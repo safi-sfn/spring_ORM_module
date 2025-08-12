@@ -19,6 +19,7 @@ public class LaunchMainApp {
 		Transaction transaction = null;
 		
 		
+		
 		try {
 			configuration = new Configuration();
 			configuration.configure("hibernate.cfg.xml");
