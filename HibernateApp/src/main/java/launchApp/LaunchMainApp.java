@@ -24,20 +24,19 @@ public class LaunchMainApp {
 			configuration = new Configuration();
 			configuration.configure("hibernate.cfg.xml");
 			sessionFactory = configuration.buildSessionFactory();
-			if (sessionFactory == null) {
-				throw new RuntimeException("SessionFactory creation failed");
-			}
 			session = sessionFactory.openSession();
 			transaction = session.beginTransaction();
 			
 			Employee emp = new Employee();
 			emp.setEno(101);
-			emp.setEname("Rayyan");
-			emp.setEsal(2000);
+			emp.setEname("Anjali");
+			emp.setEsal(3000);
 			emp.setEaddr("HYD");
 			session.persist(emp);   // session.save(); but save is deprecated
+		//	session.update(emp);  // for updation
+		//	session.delete(emp);
 			transaction.commit();
-			System.out.println("Eplmloyee Inserted Successful");
+			System.out.println("Eplmloyee Updated Successful");
 			System.out.println("Transaction success");
 			
 		} catch (Exception e) {
